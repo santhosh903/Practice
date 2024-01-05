@@ -1,8 +1,9 @@
 package TC;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -13,12 +14,10 @@ public class Login extends BrowserInit{
 	
 	WebDriver driver = ChromeInit();
 	
-	
-	
 	@BeforeTest
-	public void openUrl()
+	public void openUrl() throws IOException
 	{
-		driver.get("https://rahulshettyacademy.com/loginpagePractise/");
+		driver.get(prop("url"));
 		driver.manage().window().maximize();
 		System.out.println("Before Test Executed");
 	}
